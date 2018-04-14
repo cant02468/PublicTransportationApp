@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import static com.company.HOVLane.*;
+
 public class Main {
     static Random rand = new Random();
     static Scanner sc = new Scanner(System.in);
@@ -22,10 +24,11 @@ public class Main {
 
         System.out.println("\n\nHello PublicTransportationApp!\n");
 
-        System.out.println("\nHow many cars would you want in the HOV lane?");
+        System.out.print("\nHow many cars would you want in the HOV lane?");
         HOVLane lane = new HOVLane(sc.nextInt());
-
         System.out.println(lane.toString());
-        //System.out.println("There are " + HOVLane.size() + " cars in the HOV lane.");
+
+        //I figured this was the best way to find size recursively.
+        System.out.println("\nThere are " + size(lane) + " cars in the HOV lane.");
     }
 }

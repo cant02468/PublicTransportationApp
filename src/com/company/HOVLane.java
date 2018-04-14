@@ -1,8 +1,8 @@
 package com.company;
 
 public class HOVLane {
-    Car car;
-    HOVLane next;
+    private Car car;
+    private HOVLane next = null;
 
     public HOVLane(int numCars) {
         this.car = new Car();
@@ -13,5 +13,10 @@ public class HOVLane {
     public String toString() {
         if (next == null) return "" + this.car;
         return this.car + " followed by " + next.toString();
+    }
+
+    public static int size(HOVLane lane) {
+        if (lane == null) return 0;
+        return 1 + size(lane.next);
     }
 }
