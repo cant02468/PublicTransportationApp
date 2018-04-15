@@ -40,10 +40,10 @@ public class HOVLane {
 
     public ArrayList<Integer> carsWithSpecificColor(String carColor) {
         ArrayList<Integer> carIDs = new ArrayList<>();
-        if (this.car.getColor() == carColor) carIDs.add(this.car.getId());
+        if (this.car.getColor().equals(carColor)) carIDs.add(this.car.getId());
         HOVLane temp = this.next;
         while (temp != null){
-            if (temp.car.getColor() == carColor) carIDs.add(temp.car.getId());
+            if (temp.car.getColor().equals(carColor)) carIDs.add(temp.car.getId());
             temp = temp.next;
         }
         return carIDs;
