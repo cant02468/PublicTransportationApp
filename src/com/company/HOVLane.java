@@ -4,7 +4,7 @@ public class HOVLane {
     private Car car;
     private HOVLane next = null;
 
-    public HOVLane(int numCars) {
+    HOVLane(int numCars) {
         this.car = new Car();
         if (numCars > 1) this.next = new HOVLane(numCars-1);
     }
@@ -15,8 +15,13 @@ public class HOVLane {
         return this.car + " followed by " + next.toString();
     }
 
-    public static int size(HOVLane lane) {
-        if (lane == null) return 0;
-        return 1 + size(lane.next);
+    public int size() {
+        HOVLane temp = this.next;
+        int count = 1;
+        while (temp != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
     }
 }
