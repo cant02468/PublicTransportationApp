@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class HOVLane {
     private Car car;
     private HOVLane next = null;
@@ -23,5 +25,15 @@ public class HOVLane {
             temp = temp.next;
         }
         return count;
+    }
+
+    public ArrayList<Integer> carsWithSpecificOccupants(int numOccupants) {
+        ArrayList<Integer> carIDs = new ArrayList<>();
+        HOVLane temp = this.next;
+        while (temp != null){
+            if (temp.car.getOccupants() == numOccupants) carIDs.add(temp.car.getId());
+            temp = temp.next;
+        }
+        return carIDs;
     }
 }

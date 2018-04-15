@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -30,5 +31,8 @@ public class Main {
 
         //Changed the size() method to be iterative since it seems more intuitive than passing a variable through its own method for recursion.
         System.out.println("\nThere are " + lane.size() + " cars in the HOV lane.");
+
+        ArrayList<Integer> oneOccupantIDs = lane.carsWithSpecificOccupants(1);
+        System.out.println("\nThe IDs of the cars with one occupant are " + oneOccupantIDs);
     }
 }
