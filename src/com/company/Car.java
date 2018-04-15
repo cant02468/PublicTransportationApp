@@ -17,6 +17,10 @@ public class Car {
         this.occupants = rand.nextInt(5) + 1 ;
     }
 
+    public String getColor() {
+        return color;
+    }
+
     public int getId() {
         return id;
     }

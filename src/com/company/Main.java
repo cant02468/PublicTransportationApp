@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -34,5 +35,10 @@ public class Main {
 
         ArrayList<Integer> oneOccupantIDs = lane.carsWithSpecificOccupants(1);
         System.out.println("\nThe IDs of the cars with one occupant are " + oneOccupantIDs);
+
+        System.out.print("\nWhat color are the cars you are searching for in the HOVLane? ");
+        String carColor = Colors.valueOf(sc.next()).toString();
+        ArrayList<Integer> colorCarIDs = lane.carsWithSpecificColor(carColor);
+        System.out.println("There are " + colorCarIDs.size() + " " + carColor + " cars.");
     }
 }
