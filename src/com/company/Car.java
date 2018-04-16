@@ -3,7 +3,7 @@ package com.company;
 import java.util.Random;
 
 public class Car {
-    String color;
+    private String color;
     private int id;
     private static int carID = 0;
     private int occupants;
@@ -31,6 +31,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return color + " car/" + this.occupants + " occupants/ID:" + this.id;
+        return color + " car|" + this.occupants + " occupants|ID:" + this.id;
     }
 }

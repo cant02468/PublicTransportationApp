@@ -1,12 +1,9 @@
 package com.company;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-
-import static com.company.HOVLane.*;
 
 public class Main {
     static Random rand = new Random();
@@ -27,7 +24,7 @@ public class Main {
         System.out.println("\n\nHello PublicTransportationApp!\n");
 
         System.out.print("\nHow many cars would you want in the HOV lane? ");
-        HOVLane lane = new HOVLane(sc.nextInt());
+        HovLane lane = new HovLane(sc.nextInt());
         System.out.println(lane.toString());
 
         //Changed the size() method to be iterative since it seems more intuitive than passing a variable through its own method for recursion.
@@ -36,7 +33,7 @@ public class Main {
         ArrayList<Integer> oneOccupantIDs = lane.carsWithSpecificOccupants(1);
         System.out.println("\nThe IDs of the cars with one occupant are " + oneOccupantIDs);
 
-        System.out.print("\nWhat color are the cars you are searching for in the HOVLane? ");
+        System.out.print("\nWhat color are the cars you are searching for in the HovLane? ");
         String carColor = Colors.valueOf(sc.next()).toString();
         ArrayList<Integer> colorCarIDs = lane.carsWithSpecificColor(carColor);
         System.out.println("There are " + colorCarIDs.size() + " " + carColor + " cars.");
