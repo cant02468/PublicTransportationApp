@@ -27,7 +27,6 @@ public class Main {
         HovLane lane = new HovLane(sc.nextInt());
         System.out.println(lane.toString());
 
-        //Changed the size() method to be iterative since it seems more intuitive than passing a variable through its own method for recursion.
         System.out.println("\nThere are " + lane.size() + " cars in the HOV lane.");
 
         ArrayList<Integer> oneOccupantIDs = lane.carsWithSpecificOccupants(1);
@@ -37,5 +36,9 @@ public class Main {
         String carColor = Colors.valueOf(sc.next()).toString();
         ArrayList<Integer> colorCarIDs = lane.carsWithSpecificColor(carColor);
         System.out.println("There are " + colorCarIDs.size() + " " + carColor + " cars.");
+
+        CityRiser newOrleans = new CityRiser(3);
+        System.out.println(newOrleans);
+
     }
 }
